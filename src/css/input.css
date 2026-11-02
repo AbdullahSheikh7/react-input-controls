@@ -1,0 +1,135 @@
+.textfield {
+  width: 400px;
+  display: grid;
+  position: relative;
+}
+
+.textfield input[type="text"] {
+  font: 14pt Outfit;
+  color: white;
+  padding: 16px 60px;
+  width: 100%;
+  border-radius: 10px;
+  background: none;
+  border: 2px solid gray;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 200ms linear;
+}
+
+/* Focused */
+.textfield input[type="text"]:focus {
+  border-color: white;
+}
+
+.textfield input[type="text"]:focus + .icon {
+  fill: white;
+}
+
+.textfield input[type="text"]:focus ~ .placeholder {
+  scale: 0.8;
+  top: 0%;
+  left: 5px;
+  color: white;
+  border: 8px solid #333;
+}
+
+/* Filled */
+.textfield.filled input[type="text"] {
+  border-color: white;
+}
+
+.textfield.filled input[type="text"] + .icon {
+  fill: white;
+}
+
+.textfield.filled input[type="text"] ~ .placeholder {
+  scale: 0.8;
+  top: 0%;
+  left: 5px;
+  color: white;
+  border: 8px solid #333;
+}
+
+/* Incorrect */
+.textfield.incorrect input[type="text"] {
+  border-color: hsl(0, 100%, 60%) !important;
+}
+
+/* Validated */
+.textfield.correct input[type="text"] {
+  border-color: hsl(120, 100%, 60%) !important;
+}
+
+.textfield.progress .loader {
+  opacity: 1;
+}
+
+.textfield .element {
+  position: absolute;
+  transition-property: fill, color, opacity;
+  transition-duration: 200ms;
+  transition-timing-function: linear;
+  display: grid;
+  pointer-events: none;
+}
+
+.textfield span.element {
+  margin: 15px;
+}
+
+.textfield .icon {
+  fill: gray;
+  left: 0px;
+}
+
+.textfield .placeholder {
+  z-index: 1;
+  font: 14pt Outfit;
+  color: gray;
+  background: #333;
+  scale: 1;
+  border: 0px solid #333;
+  left: 60px;
+  top: 50%;
+  translate: 0 -50%;
+  border-top: none;
+  border-bottom: none;
+  transition-property: scale, top, left, border-width;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.textfield .loader {
+  opacity: 0;
+  height: 30px;
+  border: 3px solid gray;
+  border-top: 3px solid white;
+  box-sizing: border-box;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  right: 0;
+  animation: rotate 500ms linear infinite;
+}
+
+.textfield .error {
+  opacity: 0;
+  transition: opacity 200ms linear;
+}
+
+.textfield .error.visible {
+  font: 10pt Outfit;
+  left: 16px;
+  color: hsl(0, 100%, 60%);
+  opacity: 1;
+  top: 100%;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg
+  }
+  to {
+    rotate: 360deg
+  }
+}

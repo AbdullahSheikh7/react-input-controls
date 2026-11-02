@@ -1,0 +1,24 @@
+button.submit {
+  text-align: left;
+  font: 14pt Outfit;
+  border: none;
+  outline: none;
+  color: white;
+  background: #555;
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  border-radius: 10px;
+  transition-property: background, color;
+  transition-duration: 250ms;
+}
+
+button.submit.disabled {
+  color: #666;
+  cursor: default;
+  background: #444;
+}
+
+button.submit.enabled:hover {
+  background: #454545;
+}
